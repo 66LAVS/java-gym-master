@@ -14,6 +14,7 @@ public class Group {
         this.duration = duration;
     }
 
+
     public String getTitle() {
         return title;
     }
