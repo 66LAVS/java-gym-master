@@ -220,7 +220,6 @@ public class TimetableTest {
         timetable.addNewTrainingSession(thirdTrainingSection);
         timetable.addNewTrainingSession(thirdTrainingSection);
 
-
         Assertions.assertEquals(1,timetable.countOfTrainings().get(0).getCountOfTrainings());
         Assertions.assertEquals(2,timetable.countOfTrainings().get(1).getCountOfTrainings());
         Assertions.assertEquals(3,timetable.countOfTrainings().get(2).getCountOfTrainings());
