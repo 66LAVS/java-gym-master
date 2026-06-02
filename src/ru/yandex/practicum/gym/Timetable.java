@@ -1,7 +1,5 @@
 package ru.yandex.practicum.gym;
 
-import com.sun.source.tree.Tree;
-
 import java.util.*;
 
 public class Timetable {
@@ -53,25 +51,26 @@ public class Timetable {
         }
         return thisTimeTrainingSection;
     }
-    public ArrayList<Coach> countOfTrainings(){
+
+    public ArrayList<Coach> countOfTrainings() {
         ArrayList<Coach> countOfTrainings = new ArrayList<>();
-        for(TreeMap<TimeOfDay, List<TrainingSession>> dayOfWeek : timetable.values()){
-            for(List<TrainingSession> timeOfDay : dayOfWeek.values()){
-                for(TrainingSession trainingSession : timeOfDay){
-                    if(!countOfTrainings.contains(trainingSession.getCoach())){
+        for (TreeMap<TimeOfDay, List<TrainingSession>> dayOfWeek : timetable.values()) {
+            for (List<TrainingSession> timeOfDay : dayOfWeek.values()) {
+                for (TrainingSession trainingSession : timeOfDay) {
+                    if (!countOfTrainings.contains(trainingSession.getCoach())) {
                         countOfTrainings.add(trainingSession.getCoach());
                     }
                 }
             }
         }
-        for(int i = 0; i < countOfTrainings.size(); i++){
-            for(int j = 0; j < countOfTrainings.size() - 1; j++){
-                if(countOfTrainings.get(i).getCountOfTrainings() < countOfTrainings.get(j).getCountOfTrainings()){
+        for (int i = 0; i < countOfTrainings.size(); i++) {
+            for (int j = 0; j < countOfTrainings.size() - 1; j++) {
+                if (countOfTrainings.get(i).getCountOfTrainings() < countOfTrainings.get(j).getCountOfTrainings()) {
                     Collections.swap(countOfTrainings, i, j);
                 }
             }
         }
-        for (Coach coach : countOfTrainings){
+        for (Coach coach : countOfTrainings) {
             System.out.println(coach);
             System.out.println("------");
         }

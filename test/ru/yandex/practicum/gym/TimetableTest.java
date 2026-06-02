@@ -167,7 +167,7 @@ public class TimetableTest {
         Assertions.assertTrue(trainingSessions.contains(session2));
     }
 
-///
+    ///
     @Test
     void testCountOfTrainings() {
         Timetable timetable = new Timetable();
@@ -177,7 +177,7 @@ public class TimetableTest {
         TrainingSession singleTrainingSession = new TrainingSession(group, coach, DayOfWeek.MONDAY, new TimeOfDay(13, 0));
 
         timetable.addNewTrainingSession(singleTrainingSession);
-        Assertions.assertEquals(timetable.countOfTrainings().size(),1);
+        Assertions.assertEquals(timetable.countOfTrainings().size(), 1);
     }
 
     @Test
@@ -195,8 +195,8 @@ public class TimetableTest {
         timetable.addNewTrainingSession(secondTrainingSection);
         timetable.addNewTrainingSession(secondTrainingSection);
 
-        Assertions.assertEquals(1,timetable.countOfTrainings().get(0).getCountOfTrainings());
-        Assertions.assertEquals(2,timetable.countOfTrainings().get(1).getCountOfTrainings());
+        Assertions.assertEquals(1, timetable.countOfTrainings().get(0).getCountOfTrainings());
+        Assertions.assertEquals(2, timetable.countOfTrainings().get(1).getCountOfTrainings());
     }
 
     @Test
@@ -220,8 +220,8 @@ public class TimetableTest {
         timetable.addNewTrainingSession(thirdTrainingSection);
         timetable.addNewTrainingSession(thirdTrainingSection);
 
-        Assertions.assertEquals(1,timetable.countOfTrainings().get(0).getCountOfTrainings());
-        Assertions.assertEquals(2,timetable.countOfTrainings().get(1).getCountOfTrainings());
-        Assertions.assertEquals(3,timetable.countOfTrainings().get(2).getCountOfTrainings());
+        Assertions.assertEquals(1, timetable.countOfTrainings().get(0).getCountOfTrainings());
+        Assertions.assertEquals(2, timetable.countOfTrainings().get(1).getCountOfTrainings());
+        Assertions.assertEquals(3, timetable.countOfTrainings().get(2).getCountOfTrainings());
     }
 }
