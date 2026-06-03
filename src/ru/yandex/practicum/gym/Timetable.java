@@ -63,17 +63,7 @@ public class Timetable {
                 }
             }
         }
-        for (int i = 0; i < countOfTrainings.size(); i++) {
-            for (int j = 0; j < countOfTrainings.size() - 1; j++) {
-                if (countOfTrainings.get(i).getCountOfTrainings() < countOfTrainings.get(j).getCountOfTrainings()) {
-                    Collections.swap(countOfTrainings, i, j);
-                }
-            }
-        }
-        for (Coach coach : countOfTrainings) {
-            System.out.println(coach);
-            System.out.println("------");
-        }
+        countOfTrainings.sort((c1, c2) -> Integer.compare(c2.getCountOfTrainings(), c1.getCountOfTrainings()));
         return countOfTrainings;
     }
 }
